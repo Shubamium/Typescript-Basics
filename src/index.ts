@@ -34,3 +34,17 @@ let rizzList: [string, boolean][] = [
   ["Roy", true],
   ["You", false],
 ];
+
+//  Union
+let union: string | boolean | [] = "true"; //                           Can be any number of types
+union = false;
+
+// Enums
+enum KeyCode {
+  W,
+  A,
+  S,
+  D,
+}
+
+console.log(KeyCode.D);

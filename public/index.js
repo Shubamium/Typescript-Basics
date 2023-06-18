@@ -27,3 +27,15 @@ let rizzList = [
     ["Roy", true],
     ["You", false],
 ];
+//  Union
+let union = "true"; //                           Can be any number of types
+union = false;
+// Enums
+var KeyCode;
+(function (KeyCode) {
+    KeyCode[KeyCode["W"] = 0] = "W";
+    KeyCode[KeyCode["A"] = 1] = "A";
+    KeyCode[KeyCode["S"] = 2] = "S";
+    KeyCode[KeyCode["D"] = 3] = "D";
+})(KeyCode || (KeyCode = {}));
+console.log(KeyCode.D);
