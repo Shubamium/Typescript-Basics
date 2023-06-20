@@ -5,6 +5,7 @@ Learning the basics of typescript, including the following few basic concepts & 
 - Basic Types (string,number,)
 - Other types (never, undefined, null , void)
 - Tuples
+- Enums
 - Type Declaration
 - Interface Declaration
 - Functions
