@@ -46,6 +46,10 @@ let rizzList: [string, boolean][] = [
 //  Union
 let union: string | boolean | [] = "true"; //                           Can be any number of types
 union = false;
+let unionValue: "blue" | "red" = "red";
+
+type ColorVariant = "blue" | "red" | "green" | "yellow";
+let buttonColor: ColorVariant = "blue";
 
 // [3] Enums
 enum KeyCode {
@@ -126,3 +130,63 @@ let connor: monke = {
 eatBanana(connor);
 console.log({ connor }); // Doesn't cause an error
 // connor.isDed = 'blow'; Raises an error despite value is already it
+
+// -----------Interface            Same as type but only for objects and classes and functions
+interface People {
+  id: number;
+  name: string;
+  bankAccount?: string;
+  introduce?: (note: string) => string;
+}
+
+let jeff: People = {
+  id: 23043,
+  name: "Jeffrey",
+  introduce: () => "Hello My name is jeff",
+};
+
+interface MathFunc {
+  (x: number, y: number): number; // Can only have one if it's function interface
+}
+let multiplier: MathFunc = (x: number, y: number): number => x * y;
+
+// [6] Classes      Available in normal JS
+class GameEntity {
+  hp: number;
+  mp: number;
+
+  constructor(hp: number, mp: number) {
+    this.hp = hp;
+    this.mp = mp;
+    console.log("Original Constructor called");
+  }
+}
+
+// Inheritance
+class Monster extends GameEntity {
+  constructor(hp: number, mp: number) {
+    super(hp, mp); // Super must be included
+    console.log("Derived Constructor Called");
+  }
+
+  attack(target: GameEntity, dmg: number) {
+    target.hp -= dmg;
+  }
+}
+
+let Slime = new Monster(200, 100);
+let Player = new GameEntity(1000, 500);
+
+console.log(Player.hp);
+Slime.attack(Player, 100);
+console.log(Player.hp);
+
+// [7] Generics                 It's only there to keep the type consistence, and not interfere with the value itself, it's used to when you need to redeclare something using type
+function create2DimArray<T>(val: T, xDim: number, yDim: number): T[][] {
+  let firstArray = new Array(xDim).fill(val);
+  let secondArray = new Array(yDim).fill(firstArray);
+  return secondArray;
+}
+
+let chessBoard = create2DimArray<number>(0, 2, 10);
+console.log(chessBoard);

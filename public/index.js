@@ -34,6 +34,8 @@ let rizzList = [
 //  Union
 let union = "true"; //                           Can be any number of types
 union = false;
+let unionValue = "red";
+let buttonColor = "blue";
 // [3] Enums
 var KeyCode;
 (function (KeyCode) {
@@ -80,4 +82,40 @@ let connor = {
 };
 eatBanana(connor);
 console.log({ connor }); // Doesn't cause an error
-// connor.isDed = 'blow'; Raises an error despite value is already it
+let jeff = {
+    id: 23043,
+    name: "Jeffrey",
+    introduce: () => "Hello My name is jeff",
+};
+let multiplier = (x, y) => x * y;
+// [6] Classes      Available in normal JS
+class GameEntity {
+    constructor(hp, mp) {
+        this.hp = hp;
+        this.mp = mp;
+        console.log("Original Constructor called");
+    }
+}
+// Inheritance
+class Monster extends GameEntity {
+    constructor(hp, mp) {
+        super(hp, mp); // Super must be included
+        console.log("Derived Constructor Called");
+    }
+    attack(target, dmg) {
+        target.hp -= dmg;
+    }
+}
+let Slime = new Monster(200, 100);
+let Player = new GameEntity(1000, 500);
+console.log(Player.hp);
+Slime.attack(Player, 100);
+console.log(Player.hp);
+// [7] Generics                 It's only there to keep the type consistence, and not interfere with the value itself, it's used to when you need to redeclare something using type
+function create2DimArray(val, xDim, yDim) {
+    let firstArray = new Array(xDim).fill(val);
+    let secondArray = new Array(yDim).fill(firstArray);
+    return secondArray;
+}
+let chessBoard = create2DimArray(0, 2, 10);
+console.log(chessBoard);
