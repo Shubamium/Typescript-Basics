@@ -21,6 +21,11 @@ let arrAsserted = [
 ]; /* Different types can be asserted if the format is the same */
 // Different assertion
 let arrAssertedDiff = [...arr2];
+// Never type is no value
+let empty;
+const yello = () => {
+    console.log(hello);
+};
 //  [2] Tuples
 //  Multiple types
 let arr6 = ["meow", isValid]; //         /* It can be manually set */

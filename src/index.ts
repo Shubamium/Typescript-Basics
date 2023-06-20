@@ -31,6 +31,13 @@ let arrAsserted: [string, boolean] = <sample>[
 // Different assertion
 let arrAssertedDiff: sample = [...arr2] as sample;
 
+// Never type is no value
+let empty: never;
+
+const yello = () => {
+  console.log(hello);
+};
+
 //  [2] Tuples
 //  Multiple types
 let arr6: [string, boolean] = ["meow", isValid]; //         /* It can be manually set */
